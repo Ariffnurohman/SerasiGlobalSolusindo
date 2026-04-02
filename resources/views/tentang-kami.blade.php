@@ -39,15 +39,22 @@
         <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 px-4">
 
             @foreach([
-            ['1000+', 'Client'],
-            ['50+', 'Mitra Lab'],
-            ['10+', 'Tahun Pengalaman'],
-            ['99%', 'Kepuasan']
+            ['value' => 1000, 'label' => 'Client', 'suffix' => '+'],
+            ['value' => 50, 'label' => 'Mitra Lab', 'suffix' => '+'],
+            ['value' => 10, 'label' => 'Tahun Pengalaman', 'suffix' => '+'],
+            ['value' => 99, 'label' => 'Kepuasan', 'suffix' => '%']
             ] as $item)
 
-            <div class="bg-white p-6 rounded-2xl shadow text-center">
-                <h3 class="text-2xl font-bold text-[#004274]">{{ $item[0] }}</h3>
-                <p class="text-gray-500 text-sm mt-1">{{ $item[1] }}</p>
+            <div class="stat-card bg-white p-6 rounded-2xl shadow text-center">
+
+                <h3 class="text-2xl font-bold text-[#004274]">
+                    <span class="counter" data-target="{{ $item['value'] }}">0</span>{{ $item['suffix'] }}
+                </h3>
+
+                <p class="text-gray-500 text-sm mt-1">
+                    {{ $item['label'] }}
+                </p>
+
             </div>
 
             @endforeach
@@ -160,7 +167,7 @@
                         <div>
                             <h3 class="font-semibold text-lg">Tanggerang</h3>
                             <p class="text-gray-600 text-sm">
-                            Graha Segovia Blok S.27 N0. 6, Jl. Raya Panongan, Tangerang
+                                Graha Segovia Blok S.27 N0. 6, Jl. Raya Panongan, Tangerang
                             </p>
                             <a href="#" class="text-blue-600 text-sm font-medium mt-1 inline-block">
                                 Lihat Detail →

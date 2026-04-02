@@ -49,7 +49,7 @@
         <div class="relative">
 
             <img
-                src="{{ asset('images/hero/dashboard.png') }}"
+                src="{{ asset('images/hero/Manufacturing Process.png') }}"
                 class="rounded-xl shadow-2xl">
 
         </div>
@@ -288,7 +288,7 @@
                             <div class="absolute bottom-0 p-6 text-white">
 
                                 <h3 class="text-xl font-bold mb-2">
-                                    Sertifikasi ISO
+                                    Jasa Kalibrasi
                                 </h3>
 
                                 <p class="text-sm mb-4">
@@ -320,7 +320,7 @@
                             <div class="absolute bottom-0 p-6 text-white">
 
                                 <h3 class="text-xl font-bold mb-2">
-                                    Pengujian Air Limbah
+                                    Jasa Consultant
                                 </h3>
 
                                 <p class="text-sm mb-4">
@@ -352,7 +352,7 @@
                             <div class="absolute bottom-0 p-6 text-white">
 
                                 <h3 class="text-xl font-bold mb-2">
-                                    Sertifikasi SNI
+                                    Training
                                 </h3>
 
                                 <p class="text-sm mb-4">
@@ -373,6 +373,8 @@
 
                 </div>
 
+                
+
             </div>
 
 
@@ -389,103 +391,95 @@
 
 </section>
 
-<!-- LAB -->
-<section class="py-24 bg-gradient-to-r from-blue-700 to-white-600 text-white">
-
+<!-- CLIENT LOGO -->
+<section class="bg-gradient-to-r from-blue-700 to-blue-600 text-white py-16 rounded-2xl mx-6 mt-10 relative overflow-hidden">
 
     <div class="max-w-7xl mx-auto px-6">
 
         <!-- HEADER -->
-        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-16">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
 
             <div>
-
-                <h2 class="text-4xl font-bold mb-4">
+                <h2 class="text-3xl font-bold mb-3">
                     Mitra Lab Terpercaya Kami
                 </h2>
-
-                <p class="text-purple-100 mb-6">
+                <p class="text-white/80 max-w-xl">
                     Perluas jangkauan layanan lab Anda bersama Kalibrasi.com
                 </p>
 
-                <ul class="space-y-3 text-purple-100">
-
-                    <li class="flex items-center gap-3">
-                        ✔ Jangkau peluang bisnis lebih luas dengan jaringan klien
-                    </li>
-
-                    <li class="flex items-center gap-3">
-                        ✔ Peluang kolaborasi dengan klien baru
-                    </li>
-
-                    <li class="flex items-center gap-3">
-                        ✔ Sertifikasi eksklusif untuk meningkatkan kepercayaan klien
-                    </li>
-
+                <ul class="mt-4 space-y-2 text-sm text-white/90">
+                    <li>✔ Jangkau peluang bisnis lebih luas</li>
+                    <li>✔ Kolaborasi dengan berbagai industri</li>
+                    <li>✔ Tingkatkan kepercayaan klien</li>
                 </ul>
-
             </div>
 
-
-            <div class="flex gap-4 mt-8 md:mt-0">
-
-                <a href="#"
-                    class="border border-blue px-6 py-3 rounded-lg hover:bg-white hover:text-blue-700 transition">
-                    Lihat Semua Mitra
+            <div class="flex gap-3 mt-6 md:mt-0">
+                <a href="/mitra-lab"
+                   class="border border-white px-5 py-2 rounded-lg hover:bg-white hover:text-purple-700 transition">
+                   Lihat Semua Mitra
                 </a>
 
                 <a href="#"
-                    class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold">
-                    Bergabung Sekarang
+                   class="bg-white text-purple-700 px-5 py-2 rounded-lg font-semibold hover:bg-gray-100">
+                   Bergabung Sekarang
                 </a>
-
             </div>
 
         </div>
 
-</section>
+        <!-- SLIDER -->
+        <div class="relative">
 
+            <div id="slider" class="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar">
 
+                @foreach($clients as $client)
+                <div class="min-w-[260px] bg-white rounded-2xl p-5 text-gray-800 shadow-lg">
 
-<!-- CLIENT LOGO -->
-<section class="py-20 bg-white">
+                    <!-- LOGO -->
+                    <div class="h-32 flex items-center justify-center bg-gray-100 rounded-xl mb-4">
+                        <img src="{{ asset('images/mitra/' . $client->logo) }}"
+                             class="h-16 object-contain">
+                    </div>
 
-    <div class="max-w-7xl mx-auto px-6 text-center">
+                    <!-- CITY -->
+                    <span class="text-xs bg-purple-100 text-purple-700 px-3 py-1 rounded-full">
+                        {{ $client->city }}
+                    </span>
 
-        <h2 class="text-3xl font-bold mb-12">
-            Client & Partner Kami
-        </h2>
+                    <!-- NAME -->
+                    <h3 class="mt-3 font-semibold text-[#004274]">
+                        {{ $client->name }}
+                    </h3>
 
-
-        <div class="swiper clientSwiper">
-
-            <div class="swiper-wrapper">
-
-                <div class="swiper-slide flex justify-center">
-                    <img src="{{ asset('images/client/Tuvnord.svg') }}" class="h-12 opacity-70 hover:opacity-100">
+                    <div class="flex flex-wrap gap-3">
+                    @foreach(explode(',', $client->layanan) as $item)
+                        <span class="bg-blue-100 px-4 py-2 rounded-full text-sm">
+                            {{ $item }}
+                        </span>
+                    @endforeach
+                    
                 </div>
+        
 
-                <div class="swiper-slide flex justify-center">
-                    <img src="{{ asset('images/clients/client2.png') }}" class="h-12 opacity-70 hover:opacity-100">
                 </div>
-
-                <div class="swiper-slide flex justify-center">
-                    <img src="{{ asset('images/clients/client3.png') }}" class="h-12 opacity-70 hover:opacity-100">
-                </div>
-
-                <div class="swiper-slide flex justify-center">
-                    <img src="{{ asset('images/clients/client4.png') }}" class="h-12 opacity-70 hover:opacity-100">
-                </div>
-
-                <div class="swiper-slide flex justify-center">
-                    <img src="{{ asset('images/clients/client5.png') }}" class="h-12 opacity-70 hover:opacity-100">
-                </div>
+                @endforeach
 
             </div>
+
+            <!-- BUTTON -->
+            <button onclick="scrollSlider(-300)"
+                class="absolute left-0 top-1/2 -translate-y-1/2 bg-white text-black w-10 h-10 rounded-full shadow">
+                ←
+            </button>
+
+            <button onclick="scrollSlider(300)"
+                class="absolute right-0 top-1/2 -translate-y-1/2 bg-white text-black w-10 h-10 rounded-full shadow">
+                →
+            </button>
 
         </div>
 
     </div>
-
 </section>
 @endsection

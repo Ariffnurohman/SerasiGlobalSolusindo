@@ -70,3 +70,65 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const counters = document.querySelectorAll(".counter");
+    let started = false;
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting && !started) {
+                    counters.forEach((counter) => {
+                        let target = +counter.getAttribute("data-target");
+                        let duration = 2000; // 2 detik
+                        let startTime = null;
+
+                        function animate(time) {
+                            if (!startTime) startTime = time;
+
+                            let progress = time - startTime;
+                            let percent = Math.min(progress / duration, 1);
+
+                            // easing smooth (biar ga kaku)
+                            let ease = 1 - Math.pow(1 - percent, 3);
+
+                            counter.innerText = Math.floor(ease * target);
+
+                            if (progress < duration) {
+                                requestAnimationFrame(animate);
+                            } else {
+                                counter.innerText = target;
+                            }
+                        }
+
+                        requestAnimationFrame(animate);
+                    });
+
+                    started = true;
+                }
+            });
+        },
+        {
+            threshold: 0.4, // trigger saat 40% terlihat
+        }
+    );
+
+    const section = document.querySelector(".counter");
+
+    if (section) {
+        observer.observe(section);
+    }
+});
+
+// Home - Mitra Lab
+
+function scrollSlider(amount) {
+    document.getElementById("slider").scrollBy({
+        left: amount,
+        behavior: "smooth",
+    });
+}
+setInterval(() => {
+    scrollSlider(300);
+}, 3000);

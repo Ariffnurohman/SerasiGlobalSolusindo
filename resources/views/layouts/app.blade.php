@@ -11,6 +11,18 @@
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Home Mitra lab -->
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800">
@@ -60,7 +72,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="#"
+                                    <a href="consultant"
                                         class="block px-6 py-2 hover:bg-gray-100">
                                         Jasa Consultant
                                     </a>
@@ -88,19 +100,19 @@
                 </li>
 
                 <li><a href="{{ url('mitra-lab') }}" class="hover:text-[#004274]">Mitra Lab</a></li>
-                <li><a href="#" class="hover:text-[#004274]">Reseller</a></li>
-                <li><a href="#" class="hover:text-[#004274]">Event</a></li>
+                <li><a href="{{ url('reseller') }}" class="hover:text-[#004274]">Reseller</a></li>
+                <li><a href="{{ url('event') }}" class="hover:text-[#004274]">Event</a></li>
                 <li><a href="#" class="hover:text-[#004274]">Hubungi Kami</a></li>
 
             </ul>
 
 
-    <!-- Button -->
-    <a href="#" class="bg-blue-600 text-white px-5 py-2 rounded-lg">
-        Dashboard
-    </a>
+            <!-- Button -->
+            <a href="#" class="bg-blue-600 text-white px-5 py-2 rounded-lg">
+                Dashboard
+            </a>
 
-    </div>
+        </div>
     </nav>
 
     <!-- ================= CONTENT ================= -->
@@ -114,8 +126,7 @@
 
 
     <!-- ================= FOOTER ================= -->
-   <x-footer/>
-
+    <x-footer />
 </body>
 
 </html>
