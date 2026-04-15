@@ -16,12 +16,12 @@
 
             <div class="flex gap-4">
                 <a href="#form"
-                   class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100">
+                    class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100">
                     Konsultasi Sekarang
                 </a>
 
                 <a href="https://wa.me/628xxxxxxxxxx"
-                   class="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-blue-700 transition">
+                    class="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-blue-700 transition">
                     WhatsApp
                 </a>
             </div>
@@ -151,33 +151,56 @@
 </section>
 
 <!-- FORM -->
-<section id="form" class="py-20 bg-blue-600 text-white">
-    <div class="max-w-3xl mx-auto px-6">
+<!-- FORM -->
+<section id="form" class="py-20 bg-gradient-to-r from-blue-600 to-indigo-700">
+    <div class="max-w-4xl mx-auto px-6">
 
-        <h2 class="text-3xl font-bold text-center mb-10">
-            Konsultasi Gratis
-        </h2>
+        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-10">
 
-        <form action="/consultation" method="POST" class="space-y-4">
-            @csrf
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+                Konsultasi Gratis
+            </h2>
 
-            <input type="text" name="nama" placeholder="Nama"
-                class="w-full p-3 rounded text-black">
+            <form action="/consultation" method="POST" class="space-y-5">
+                @csrf
 
-            <input type="email" name="email" placeholder="Email"
-                class="w-full p-3 rounded text-black">
+                <!-- Nama -->
+                <div>
+                    <label class="block text-sm font-semibold mb-1 text-gray-700">Nama</label>
+                    <input type="text" name="nama"
+                        class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                </div>
 
-            <input type="text" name="perusahaan" placeholder="Perusahaan"
-                class="w-full p-3 rounded text-black">
+                <!-- Email -->
+                <div>
+                    <label class="block text-sm font-semibold mb-1 text-gray-700">Email</label>
+                    <input type="email" name="email"
+                        class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                </div>
 
-            <textarea name="pesan" placeholder="Kebutuhan Anda"
-                class="w-full p-3 rounded text-black"></textarea>
+                <!-- Perusahaan -->
+                <div>
+                    <label class="block text-sm font-semibold mb-1 text-gray-700">Perusahaan</label>
+                    <input type="text" name="perusahaan"
+                        class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                </div>
 
-            <button class="bg-white text-blue-600 px-6 py-3 rounded font-semibold w-full">
-                Kirim Konsultasi
-            </button>
+                <!-- Pesan -->
+                <div>
+                    <label class="block text-sm font-semibold mb-1 text-gray-700">Kebutuhan Anda</label>
+                    <textarea name="pesan" rows="4"
+                        class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
+                </div>
 
-        </form>
+                <!-- Button -->
+                <button
+                    class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                    Kirim Konsultasi
+                </button>
+
+            </form>
+
+        </div>
 
     </div>
 </section>

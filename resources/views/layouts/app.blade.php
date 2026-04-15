@@ -72,14 +72,14 @@
                                 </li>
 
                                 <li>
-                                    <a href="consultant"
+                                    <a href="{{ route('consultant') }}"
                                         class="block px-6 py-2 hover:bg-gray-100">
                                         Jasa Consultant
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="#"
+                                    <a href="training"
                                         class="block px-6 py-2 hover:bg-gray-100">
                                         Training
                                     </a>

@@ -57,8 +57,13 @@ Route::view('/layanan/kalibrasi', 'layanan.kalibrasi')->name('layanan.kalibrasi'
 
 /// KONSULTASI  
 Route::get('/consultant', function () {
-    return view('consultant');
+    return view('layanan.consultant');
 })->name('consultant');
+
+// TRAINING
+Route::get('/training', function () {
+    return view('layanan.training');
+})->name('training');
 
 /// ❓ FAQ
 Route::view('/faq', 'faq')->name('faq');
