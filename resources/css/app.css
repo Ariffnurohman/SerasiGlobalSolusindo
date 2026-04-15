@@ -42,3 +42,41 @@
     opacity:1;
     transform:translateY(0);
     }
+
+.card-lab {
+    background: #f9fafb;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card-lab img {
+    height: 60px;
+    margin: 0 auto 15px;
+    filter: grayscale(100%);
+    transition: 0.3s;
+}
+
+.card-lab p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* HOVER EFFECT */
+.card-lab:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card-lab:hover img {
+    filter: grayscale(0%);
+}
+
+/* NAV BUTTON */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #2563eb;
+}
+

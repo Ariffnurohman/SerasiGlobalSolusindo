@@ -6,12 +6,18 @@ use App\Http\Controllers\LabController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ResellerController;
 use App\Models\Lab;
+use App\Http\Controllers\MitraLabController;
 
 /*
 |--------------------------------------------------------------------------
 | WEB ROUTES
 |--------------------------------------------------------------------------
 */
+
+// ADMIN SEMENTARA
+
+Route::get('/admin/mitra/create', [MitraLabController::class, 'create'])->name('mitra.create');
+Route::post('/admin/mitra/store', [MitraLabController::class, 'store'])->name('mitra.store');
 
 /// 🏠 HOMEPAGE
 Route::get('/', function () {
@@ -54,6 +60,7 @@ Route::prefix('event')->group(function () {
 
 /// 🧪 LAYANAN
 Route::view('/layanan/kalibrasi', 'layanan.kalibrasi')->name('layanan.kalibrasi');
+Route::get('/ruang-lingkup/{slug}', [App\Http\Controllers\LayananController::class, 'show']);
 
 /// KONSULTASI  
 Route::get('/consultant', function () {

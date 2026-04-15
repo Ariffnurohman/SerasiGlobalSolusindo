@@ -132,3 +132,23 @@ function scrollSlider(amount) {
 setInterval(() => {
     scrollSlider(300);
 }, 3000);
+
+const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    spaceBetween: 20,
+
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+    },
+
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+
+    breakpoints: {
+        640: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+    }
+});

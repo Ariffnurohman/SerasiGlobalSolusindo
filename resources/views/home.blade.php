@@ -421,7 +421,7 @@
                 </a>
 
                 <a href="#"
-                   class="bg-white text-purple-700 px-5 py-2 rounded-lg font-semibold hover:bg-gray-100">
+                   class="bg-white text-blue-700 px-5 py-2 rounded-lg font-semibold hover:bg-gray-100">
                    Bergabung Sekarang
                 </a>
             </div>
