@@ -4,10 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Models\Lab;
 
 class MitraLabController extends Controller
 {
+
+    public function show($slug)
+{
+    $lab = Lab::where('slug', $slug)->firstOrFail();
+
+    return view('mitra.show', compact('lab'));
+}
     // ✅ halaman mitra (frontend)
     public function index()
     {
@@ -18,7 +26,9 @@ class MitraLabController extends Controller
     // ✅ halaman form tambah (admin)
     public function create()
     {
+        
         return view('admin.mitra.create');
+        
     }
 
     // ✅ proses simpan data
@@ -26,8 +36,10 @@ class MitraLabController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'slug' => 'nullable',
             'city' => 'required',
-            'layanan' => 'required',
+            'about' => 'nullable',
+            'scope_of_calibration' => 'nullable',
             'logo' => 'nullable|image|mimes:jpg,jpeg,png',
         ]);
 
@@ -42,14 +54,16 @@ class MitraLabController extends Controller
 
         Lab::create([
             'name' => $request->name,
+            'slug' => Str::slug($request->name),
             'city' => $request->city,
             'logo' => $filename,
-            'layanan' => $request->layanan,
+            'about' => $request->about,
+            'scope_of_calibration' => $request->scope_of_calibration,
             'is_active' => $request->has('is_active'),
             'is_verified' => $request->has('is_verified'),
         ]);
 
         return redirect()->route('mitra.create')
-                         ->with('success', 'Mitra Lab berhasil ditambahkan!');
+            ->with('success', 'Mitra Lab berhasil ditambahkan!');
     }
 }

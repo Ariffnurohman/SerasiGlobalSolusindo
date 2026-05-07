@@ -11,7 +11,7 @@
             <!-- LOGO -->
             <div class="bg-white p-6 rounded-2xl shadow-lg">
                 <img src="{{ asset('images/mitra/' . $lab->logo) }}"
-                     class="h-24 object-contain">
+                    class="h-24 object-contain">
             </div>
 
             <!-- INFO -->
@@ -43,61 +43,53 @@
         <!-- LEFT -->
         <div class="md:col-span-2 space-y-8">
 
-            <!-- DESKRIPSI -->
+            <!-- ABOUT -->
             <div class="bg-white p-6 rounded-xl shadow-sm">
+
                 <h2 class="text-xl font-semibold mb-3 text-[#004274]">
-                    Tentang Laboratorium
+                    About Laboratory
                 </h2>
 
                 <p class="text-gray-600 leading-relaxed">
-                    {{ $lab->description ?? 'Laboratorium ini menyediakan layanan kalibrasi dan pengujian profesional dengan standar terbaik.' }}
+                    {{ $lab->about ?? 'Tidak ada deskripsi laboratorium.' }}
                 </p>
+
             </div>
 
-            <!-- LAYANAN -->
+            <!-- SCOPE OF CALIBRATION -->
             <div class="bg-white p-6 rounded-xl shadow-sm">
+
                 <h2 class="text-xl font-semibold mb-4 text-[#004274]">
-                    Layanan
+                    Scope Of Calibration
                 </h2>
 
                 <div class="flex flex-wrap gap-3">
-                    @foreach(explode(',', $lab->layanan) as $item)
-                        <span class="bg-gray-100 px-4 py-2 rounded-full text-sm">
-                            {{ $item }}
-                        </span>
+
+                    @if($lab->scope_of_calibration)
+
+                    @foreach(explode(',', $lab->scope_of_calibration) as $item)
+
+                    <span class="bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-sm">
+                        {{ trim($item) }}
+                    </span>
+
                     @endforeach
+
+                    @else
+
+                    <span class="text-gray-400 text-sm">
+                        Tidak ada scope calibration
+                    </span>
+
+                    @endif
+
                 </div>
+
             </div>
 
-        </div>
 
         <!-- RIGHT -->
-        <div class="space-y-6">
-
-            <!-- KONTAK -->
-            <div class="bg-white p-6 rounded-xl shadow-sm">
-                <h2 class="text-lg font-semibold mb-4 text-[#004274]">
-                    Kontak
-                </h2>
-
-                <p class="text-gray-600 mb-2">
-                    📍 {{ $lab->city }}
-                </p>
-
-                <p class="text-gray-600 mb-2">
-                    📞 {{ $lab->phone ?? '-' }}
-                </p>
-
-                <p class="text-gray-600 mb-4">
-                    ✉️ {{ $lab->email ?? '-' }}
-                </p>
-
-                <a href="#"
-                   class="block text-center bg-[#E24A3B] text-white py-2 rounded-lg hover:bg-red-600 transition">
-                   Hubungi Sekarang
-                </a>
-            </div>
-
+        <div class="space-y-6">s
             <!-- CTA -->
             <div class="bg-gradient-to-r from-[#004274] to-[#0F6BAE] text-white p-6 rounded-xl shadow">
                 <h3 class="font-semibold mb-2">
@@ -108,8 +100,8 @@
                 </p>
 
                 <a href="#"
-                   class="block text-center bg-white text-[#004274] py-2 rounded-lg font-semibold">
-                   Konsultasi Gratis
+                    class="block text-center bg-white text-[#004274] py-2 rounded-lg font-semibold">
+                    Konsultasi Gratis
                 </a>
             </div>
 

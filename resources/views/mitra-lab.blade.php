@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section class="bg-[#F8FAFC] py-16">
+<section class="bg-[#F8FAFC] pt-32 pb-16">
 
     <!-- HEADER -->
     <div class="max-w-7xl mx-auto px-6 text-center mb-12">
@@ -27,7 +27,7 @@
             <div class="relative h-40 flex items-center justify-center bg-gray-100">
 
                 <img src="{{ asset('images/mitra/' . ($lab->logo ?? 'default.png')) }}"
-                     class="h-20 object-contain">
+                    class="h-20 object-contain">
 
                 <span class="absolute top-3 right-3 bg-blue-600 text-white text-xs px-3 py-1 rounded-full">
                     {{ $lab->city }}
@@ -47,17 +47,17 @@
 
                     @if($lab->layanan)
 
-                        @foreach(explode(',', $lab->layanan) as $item)
-                            <span class="text-xs bg-blue-50 text-blue-600 px-3 py-1 rounded-full">
-                                {{ trim($item) }}
-                            </span>
-                        @endforeach
+                    @foreach(explode(',', $lab->layanan) as $item)
+                    <span class="text-xs bg-blue-50 text-blue-600 px-3 py-1 rounded-full">
+                        {{ trim($item) }}
+                    </span>
+                    @endforeach
 
                     @else
 
-                        <span class="text-xs text-gray-400">
-                            Tidak ada layanan
-                        </span>
+                    <span class="text-xs text-gray-400">
+                        Tidak ada layanan
+                    </span>
 
                     @endif
 
@@ -67,16 +67,17 @@
                 <div class="flex items-center justify-between">
 
                     @if($lab->is_verified)
-                        <span class="text-xs text-green-600 font-semibold">
-                            ✔ Terverifikasi
-                        </span>
+                    <span class="text-xs text-green-600 font-semibold">
+                        ✔ Terverifikasi
+                    </span>
                     @else
-                        <span class="text-xs text-yellow-600 font-semibold">
-                            ● Belum Verifikasi
-                        </span>
+                    <span class="text-xs text-yellow-600 font-semibold">
+                        ● Belum Verifikasi
+                    </span>
                     @endif
 
-                    <a href="#" class="text-[#E24A3B] font-semibold text-sm hover:underline">
+                    <a href="{{ route('mitra.show', $lab->slug) }}"
+                        class="text-[#E24A3B] font-semibold text-sm hover:underline">
                         Detail →
                     </a>
 

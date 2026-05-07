@@ -31,8 +31,10 @@ Route::get('/', function () {
 
 
 /// 🏢 MITRA LAB
-Route::get('/mitra-lab', [LabController::class, 'index'])->name('mitra.index');
-Route::get('/mitra-lab/{id}', [LabController::class, 'show'])->name('mitra.show');
+Route::get('/mitra-lab', [MitraLabController::class, 'index'])
+    ->name('mitra.index');
+Route::get('/mitra-lab/{slug}', [MitraLabController::class, 'show'])
+    ->name('mitra.show');
 
 
 /// 📄 TENTANG KAMI

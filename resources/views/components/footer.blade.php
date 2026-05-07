@@ -26,7 +26,7 @@
             <p class="text-sm">Email: support@rsttools.com</p>
             <p class="text-sm mt-2">(+62)21-6281615</p>
             <p class="text-sm">FAX: (+62)21-6265559</p>
-            <p class="text-sm mt-2">Website: rukun.id</p>
+            <p class="text-sm mt-2">www.sgskalibrasi.com</p>
         </div>
 
         <!-- Cabang -->

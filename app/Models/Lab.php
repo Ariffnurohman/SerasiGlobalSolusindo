@@ -8,10 +8,12 @@ class Lab extends Model
 {
     protected $fillable = [
         'name',
+        'slug',
         'city',
         'logo',
-        'layanan',
+        'about',
+        'scope_of_calibration',
         'is_active',
-        'is_verified'
+        'is_verified',
     ];
 }

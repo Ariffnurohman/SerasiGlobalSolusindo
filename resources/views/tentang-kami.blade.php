@@ -18,7 +18,7 @@
                 </p>
 
                 <div class="mt-6 flex gap-4">
-                    <a href="#" class="bg-white text-[#004274] px-6 py-3 rounded-xl font-semibold">
+                    <a href="https://wa.me/6281234567890" target="_blank" class="bg-white text-[#004274] px-6 py-3 rounded-xl font-semibold">
                         Konsultasi Sekarang
                     </a>
                     <a href="#" class="border border-white px-6 py-3 rounded-xl">
@@ -97,7 +97,7 @@
                     </div>
 
                     <p class="text-gray-600 leading-relaxed">
-                        Kalibrasi.com bertujuan untuk memberdayakan bisnis dengan layanan kalibrasi
+                        Serasi Global Solusindo bertujuan untuk memberdayakan bisnis dengan layanan kalibrasi
                         yang akurat dan handal demi mendorong inovasi dan keunggulan dalam industri.
                     </p>
                 </div>
@@ -197,7 +197,7 @@
             Kami siap membantu kebutuhan kalibrasi dan pengujian Anda
         </p>
 
-        <a href="#" class="bg-white text-[#004274] px-8 py-3 rounded-xl font-semibold">
+        <a href="https://wa.me/6281234567890" target="_blank" class="bg-white text-[#004274] px-8 py-3 rounded-xl font-semibold">
             Hubungi Kami
         </a>
     </section>

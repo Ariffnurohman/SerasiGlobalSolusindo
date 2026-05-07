@@ -21,12 +21,12 @@
 
             <div class="flex gap-4">
 
-                <a href="/services"
+            <a href="https://wa.me/6281234567890" target="_blank"
                     class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700">
                     Cari Layanan
                 </a>
 
-                <a href="/labs"
+                <a href="https://wa.me/6281234567890" target="_blank"
                     class="border border-gray-300 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100">
                     Daftar Laboratorium
                 </a>
@@ -66,7 +66,7 @@
         <div class="text-center mb-16">
 
             <h2 class="text-4xl font-bold text-gray-800">
-                Product & Service Categories
+                LAYANAN INDUSTRI
             </h2>
 
             <p class="text-gray-500 mt-3">
@@ -75,31 +75,8 @@
 
         </div>
 
-
-        <div class="grid md:grid-cols-4 gap-8">
-
-
-            <!-- PRODUCT / SERVICE -->
-            <a href="/services"
-                class="group bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl hover:-translate-y-2 transition">
-
-                <div class="bg-blue-100 w-20 h-20 flex items-center justify-center rounded-full mx-auto mb-6 group-hover:bg-blue-600 transition">
-
-                    <i data-lucide="package"
-                        class="w-10 h-10 text-blue-600 group-hover:text-white"></i>
-
-                </div>
-
-                <h3 class="font-bold text-lg mb-2">
-                    Product / Service
-                </h3>
-
-                <p class="text-gray-500 text-sm">
-                    Berbagai produk dan layanan industri berkualitas tinggi
-                </p>
-
-            </a>
-
+        <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
             <!-- TRAINING -->
             <a href="/training"
@@ -169,6 +146,7 @@
 
         </div>
 
+    </div>
     </div>
 
 </section>
