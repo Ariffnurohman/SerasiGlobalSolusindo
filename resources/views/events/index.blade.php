@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- HERO -->
-<section class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-20 text-center">
+<section class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white pt-32 pb-16 text-center">
     <h1 class="text-4xl font-bold mb-2">Event & Seminar</h1>
     <p class="text-lg opacity-90">Temukan event terbaik seputar kalibrasi & industri</p>
 </section>
