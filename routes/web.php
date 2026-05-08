@@ -7,6 +7,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\ResellerController;
 use App\Models\Lab;
 use App\Http\Controllers\MitraLabController;
+use App\Http\Controllers\LayananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,14 +22,17 @@ Route::post('/admin/mitra/store', [MitraLabController::class, 'store'])->name('m
 
 /// 🏠 HOMEPAGE
 Route::get('/', function () {
-    $clients = Lab::where('is_active', true)
+
+    $mitraLabs = Lab::where('is_active', true)
         ->where('is_verified', true)
+        ->latest()
         ->take(6)
         ->get();
 
-    return view('home', compact('clients'));
+    return view('home', compact('mitraLabs'));
 });
 
+Route::view('/hubungi-kami', 'contact')->name('contact');
 
 /// 🏢 MITRA LAB
 Route::get('/mitra-lab', [MitraLabController::class, 'index'])
@@ -61,7 +65,8 @@ Route::prefix('event')->group(function () {
 
 
 /// 🧪 LAYANAN
-Route::view('/layanan/kalibrasi', 'layanan.kalibrasi')->name('layanan.kalibrasi');
+Route::get('/layanan/kalibrasi', [LayananController::class, 'index'])
+    ->name('layanan.kalibrasi');
 Route::get('/ruang-lingkup/{slug}', [App\Http\Controllers\LayananController::class, 'show']);
 
 /// KONSULTASI  

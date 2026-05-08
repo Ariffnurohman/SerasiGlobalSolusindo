@@ -85,13 +85,6 @@
                                     </a>
                                 </li>
 
-                                <li>
-                                    <a href="#"
-                                        class="block px-6 py-2 hover:bg-gray-100">
-                                        Product & Service
-                                    </a>
-                                </li>
-
                             </ul>
 
                         </div>
@@ -102,15 +95,10 @@
                 <li><a href="{{ url('mitra-lab') }}" class="hover:text-[#004274]">Mitra Lab</a></li>
                 <li><a href="{{ url('reseller') }}" class="hover:text-[#004274]">Reseller</a></li>
                 <li><a href="{{ url('event') }}" class="hover:text-[#004274]">Event</a></li>
-                <li><a href="#" class="hover:text-[#004274]">Hubungi Kami</a></li>
+                <li><a href="{{ url('hubungi-kami') }}" class="hover:text-[#004274]">Hubungi Kami</a></li>
 
             </ul>
 
-
-            <!-- Button -->
-            <a href="#" class="bg-blue-600 text-white px-5 py-2 rounded-lg">
-                Dashboard
-            </a>
 
         </div>
     </nav>
@@ -124,6 +112,8 @@
 
     </main>
 
+    <!-- ChatBot -->
+    <x-chat-widget />
 
     <!-- ================= FOOTER ================= -->
     <x-footer />

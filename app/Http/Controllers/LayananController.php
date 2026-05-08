@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Lab;
 use Illuminate\Http\Request;
 
 class LayananController extends Controller
@@ -38,5 +39,14 @@ class LayananController extends Controller
         return view('ruang-lingkup.detail', [
             'layanan' => $layanan[$slug]
         ]);
+    }
+    public function index()
+    {
+        $mitraLabs = Lab::where('is_active', true)
+            ->where('is_verified', true)
+            ->latest()
+            ->get();
+
+        return view('layanan.kalibrasi', compact('mitraLabs'));
     }
 }

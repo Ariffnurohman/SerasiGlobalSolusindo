@@ -3,49 +3,59 @@ import "./bootstrap";
 import { createIcons, icons } from "lucide";
 
 import Swiper from "swiper";
-import { Navigation } from "swiper/modules";
+import {
+    Navigation,
+    Pagination,
+    Autoplay,
+} from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
-
-new Swiper(".heroSwiper", {
-    slidesPerView: 1,
-    loop: true,
-
-    autoplay: {
-        delay: 5000,
-    },
-    slidesPerView: 1,
-    loop: true,
-
-    speed: 1200,
-
-    autoplay: {
-        delay: 5000,
-    },
-
-    effect: "slide",
-});
+import "swiper/css/pagination";
 
 createIcons({ icons });
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    // HERO SWIPER
+    new Swiper(".heroSwiper", {
+
+        modules: [Navigation, Pagination, Autoplay],
+
+        slidesPerView: 1,
+        loop: true,
+        speed: 1200,
+
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+
+    });
+
+
+
+    // SERVICE SWIPER
     new Swiper(".serviceSwiper", {
+
+        modules: [Navigation, Pagination, Autoplay],
+
         slidesPerView: 3,
         spaceBetween: 30,
         loop: true,
 
         autoplay: {
             delay: 4000,
+            disableOnInteraction: false,
         },
 
         navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: ".service-next",
+            prevEl: ".service-prev",
         },
 
         pagination: {
-            el: ".swiper-pagination",
+            el: ".service-pagination",
             clickable: true,
         },
 
@@ -54,101 +64,63 @@ document.addEventListener("DOMContentLoaded", () => {
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
         },
+
     });
 
+
+
+    // CLIENT SWIPER
     new Swiper(".clientSwiper", {
+
+        modules: [Autoplay],
+
         slidesPerView: 5,
         spaceBetween: 30,
         loop: true,
+
         autoplay: {
             delay: 2000,
+            disableOnInteraction: false,
         },
+
         breakpoints: {
             640: { slidesPerView: 2 },
             768: { slidesPerView: 3 },
             1024: { slidesPerView: 5 },
         },
+
     });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
-    const counters = document.querySelectorAll(".counter");
-    let started = false;
 
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting && !started) {
-                    counters.forEach((counter) => {
-                        let target = +counter.getAttribute("data-target");
-                        let duration = 2000; // 2 detik
-                        let startTime = null;
 
-                        function animate(time) {
-                            if (!startTime) startTime = time;
+    // PARTNER SWIPER
+    new Swiper(".partnerSwiper", {
 
-                            let progress = time - startTime;
-                            let percent = Math.min(progress / duration, 1);
+        modules: [Navigation, Autoplay],
 
-                            // easing smooth (biar ga kaku)
-                            let ease = 1 - Math.pow(1 - percent, 3);
+        loop: true,
+        spaceBetween: 25,
 
-                            counter.innerText = Math.floor(ease * target);
-
-                            if (progress < duration) {
-                                requestAnimationFrame(animate);
-                            } else {
-                                counter.innerText = target;
-                            }
-                        }
-
-                        requestAnimationFrame(animate);
-                    });
-
-                    started = true;
-                }
-            });
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
         },
-        {
-            threshold: 0.4, // trigger saat 40% terlihat
-        }
-    );
 
-    const section = document.querySelector(".counter");
+        navigation: {
+            nextEl: ".partner-next",
+            prevEl: ".partner-prev",
+        },
 
-    if (section) {
-        observer.observe(section);
-    }
-});
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+            },
 
-// Home - Mitra Lab
+            1024: {
+                slidesPerView: 3,
+            },
+        },
 
-function scrollSlider(amount) {
-    document.getElementById("slider").scrollBy({
-        left: amount,
-        behavior: "smooth",
     });
-}
-setInterval(() => {
-    scrollSlider(300);
-}, 3000);
 
-const swiper = new Swiper(".mySwiper", {
-    loop: true,
-    spaceBetween: 20,
-
-    autoplay: {
-        delay: 2000,
-        disableOnInteraction: false,
-    },
-
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-
-    breakpoints: {
-        640: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 }
-    }
 });

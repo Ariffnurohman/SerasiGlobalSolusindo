@@ -34,70 +34,146 @@ use Illuminate\Support\Str;
     </section>
 
     <!-- LIST LAYANAN -->
-    <section class="py-20">
+    <section class="py-20 bg-gray-50">
         <div class="px-6 md:px-12 lg:px-20">
 
-            <h2 class="text-3xl font-bold text-gray-800 mb-10">
-                Jenis Layanan Kalibrasi
-            </h2>
+            <!-- HEADING -->
+            <div class="text-center mb-14">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    Jenis Layanan Kalibrasi
+                </h2>
 
-            <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <p class="text-gray-500 max-w-2xl mx-auto">
+                    Kami menyediakan berbagai layanan kalibrasi profesional
+                    dengan standar nasional dan internasional untuk mendukung
+                    kebutuhan industri Anda.
+                </p>
+            </div>
+
+            <!-- GRID -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
                 @foreach ([
+
                 [
-                'nama' => 'Kalibrasi Dimensi',
-                'icon' => 'arrows-pointing-out'
-                ],
-                [
-                'nama' => 'Kalibrasi Massa',
-                'icon' => 'scale'
-                ],
-                [
-                'nama' => 'Kalibrasi Tekanan',
-                'icon' => 'adjustments-horizontal'
-                ],
-                [
-                'nama' => 'Kalibrasi Temperatur',
+                'nama' => 'Temperatur & Humidity',
                 'icon' => 'sun'
                 ],
+
                 [
-                'nama' => 'Kalibrasi Volume',
-                'icon' => 'cube'
+                'nama' => 'Force',
+                'icon' => 'scale'
                 ],
+
                 [
-                'nama' => 'Kalibrasi Elektrikal',
-                'icon' => 'bolt'
+                'nama' => 'Pressure',
+                'icon' => 'adjustments-horizontal'
                 ],
+
                 [
-                'nama' => 'Kalibrasi Waktu',
+                'nama' => 'Volumetric',
+                'icon' => 'beaker'
+                ],
+
+                [
+                'nama' => 'Time & Frequency',
                 'icon' => 'clock'
                 ],
+
                 [
-                'nama' => 'Kalibrasi Flow',
-                'icon' => 'arrow-path'
+                'nama' => 'Flows & Streams',
+                'icon' => 'arrow-trending-up'
                 ],
+
+                [
+                'nama' => 'Electrical',
+                'icon' => 'bolt'
+                ],
+
+                [
+                'nama' => 'Density & Bulk',
+                'icon' => 'cube'
+                ],
+
+                [
+                'nama' => 'Photometry',
+                'icon' => 'eye'
+                ],
+
+                [
+                'nama' => 'Long',
+                'icon' => 'arrows-right-left'
+                ],
+
+                [
+                'nama' => 'Hardness',
+                'icon' => 'shield-check'
+                ],
+
+                [
+                'nama' => 'Mass',
+                'icon' => 'scale'
+                ],
+
+                [
+                'nama' => 'Acoustics & Vibration',
+                'icon' => 'speaker-wave'
+                ],
+
+                [
+                'nama' => 'Torque',
+                'icon' => 'cog-6-tooth'
+                ],
+
+                [
+                'nama' => 'Analytical & Instruments',
+                'icon' => 'beaker'
+                ],
+
                 ] as $item)
 
-                <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg hover:-translate-y-1 transition">
+                <!-- CARD -->
+                <div class="group bg-white rounded-3xl p-7 border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition duration-300">
 
                     <!-- ICON -->
-                    <x-dynamic-component
-                        :component="'heroicon-o-' . $item['icon']"
-                        class="w-10 h-10 text-purple-600 mb-3" />
+                    <div class="w-16 h-16 rounded-2xl bg-purple-100 flex items-center justify-center mb-6 transition duration-300 group-hover:bg-purple-600">
+
+                        <x-dynamic-component
+                            :component="'heroicon-o-' . $item['icon']"
+                            class="w-8 h-8 text-purple-600 transition duration-300 group-hover:text-white" />
+
+                    </div>
 
                     <!-- TITLE -->
-                    <h3 class="font-semibold text-lg text-gray-800">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 leading-snug">
                         {{ $item['nama'] }}
                     </h3>
 
-                    <p class="text-sm text-gray-500 mt-2">
-                        Layanan kalibrasi akurat dan terpercaya
+                    <!-- DESC -->
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        Layanan kalibrasi profesional dengan standar akurasi tinggi
+                        dan tenaga ahli berpengalaman.
                     </p>
 
-                    <!-- LINK -->
+                    <!-- BUTTON -->
                     <a href="{{ url('ruang-lingkup/' . Str::slug($item['nama'])) }}"
-                        class="inline-block mt-3 text-blue-600 text-sm font-medium">
-                        Lihat Detail →
+                        class="inline-flex items-center gap-2 text-purple-600 font-semibold hover:gap-3 transition-all duration-300">
+
+                        Learn More
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="w-4 h-4"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor">
+
+                            <path stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 5l7 7-7 7" />
+
+                        </svg>
+
                     </a>
 
                 </div>
@@ -109,70 +185,64 @@ use Illuminate\Support\Str;
         </div>
     </section>
 
-    <!-- PARTNER LAB SLIDER -->
-    <!-- PARTNER LAB SLIDER -->
-    <section class="bg-white py-20">
+
+    <!-- PARTNER LAB -->
+    <section class="bg-white py-20 overflow-hidden">
         <div class="px-6 md:px-12 lg:px-20">
 
             <div class="grid md:grid-cols-3 gap-10 items-center">
 
-                <!-- TEXT -->
+                <!-- LEFT CONTENT -->
                 <div>
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-5">
                         Our Partner Lab
                     </h2>
 
-                    <p class="text-gray-600 mb-6">
-                        Get certified by the best partner labs in the field.
+                    <p class="text-gray-600 leading-relaxed mb-8">
+                        Get certified by trusted calibration laboratories
+                        with professional and verified standards.
                     </p>
 
                     <a href="{{ url('mitra-lab') }}"
-                        class="inline-block border border-blue-600 text-blue-600 px-6 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition">
+                        class="inline-flex items-center border border-blue-600 text-blue-600 px-6 py-3 rounded-xl hover:bg-blue-600 hover:text-white transition">
                         See All
                     </a>
                 </div>
 
-                <!-- SLIDER -->
+                <!-- RIGHT SLIDER -->
                 <div class="md:col-span-2 relative">
 
-                    <div class="swiper mySwiper">
+                    <div class="swiper partnerSwiper">
+
                         <div class="swiper-wrapper">
 
-                            <!-- ITEM -->
-                            <div class="swiper-slide">
-                                <div class="card-lab">
-                                    <img src="{{ asset('images/mitra/tuv-nord.jpeg') }}">
-                                    <p>PT TUV NORD Indonesia</p>
-                                </div>
-                            </div>
+                            @foreach ($mitraLabs as $lab)
 
                             <div class="swiper-slide">
-                                <div class="card-lab">
-                                    <img src="{{ asset('images/mitra/dinamika-kalibrasi.jpeg') }}">
-                                    <p>PT Dinamika Kalibrasi Indonesia</p>
+
+                                <div class="bg-gray-50 rounded-3xl p-8 shadow-sm hover:shadow-xl transition duration-300 text-center h-full border border-gray-100">
+
+                                    <img src="{{ asset('images/mitra/' . $lab->logo) }}"
+                                        alt="{{ $lab->name }}"
+                                        class="h-24 mx-auto object-contain mb-6 grayscale hover:grayscale-0 transition duration-300">
+
+                                    <h3 class="font-semibold text-gray-800 text-lg leading-relaxed">
+                                        {{ $lab->name }}
+                                    </h3>
+
                                 </div>
+
                             </div>
 
-                            <div class="swiper-slide">
-                                <div class="card-lab">
-                                    <img src="{{ asset('images/mitra/trusur.jpeg') }}">
-                                    <p>PT Trusur Unggul Teknusa</p>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="card-lab">
-                                    <img src="{{ asset('images/mitra/qualis.png') }}">
-                                    <p>PT Qualitas Indonesia</p>
-                                </div>
-                            </div>
+                            @endforeach
 
                         </div>
-                    </div>
 
-                    <!-- NAVIGATION -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                        <!-- NAVIGATION -->
+                        <div class="swiper-button-next partner-next"></div>
+                        <div class="swiper-button-prev partner-prev"></div>
+
+                    </div>
 
                 </div>
 
@@ -196,4 +266,29 @@ use Illuminate\Support\Str;
 
 </div>
 
+<script>
+    new Swiper(".mySwiper", {
+        loop: true,
+        spaceBetween: 20,
+        slidesPerView: 1,
+
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+        },
+
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+
+        autoplay: {
+            delay: 2500,
+        },
+    });
+</script>
 @endsection
