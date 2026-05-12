@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ config('app.name', 'SGS Kalibrasi') }}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('sgs-kalibrasi.png') }}">
+    <title>Serasi Global Solusindo</title>
+
 
     @vite(['resources/css/app.css','resources/js/app.js'])
 
@@ -48,7 +52,7 @@
                 <a href="/" class="flex items-center">
 
                     <img src="{{ asset('images/Logo/LOGO-SGS.png') }}"
-                        class="h-10 md:h-12 w-auto object-contain">
+                        class="h-14 md:h-16 w-auto object-contain">
 
                 </a>
 
@@ -93,17 +97,17 @@
 
                                 <a href="{{ route('layanan.kalibrasi') }}"
                                     class="block px-6 py-3 hover:bg-gray-50">
-                                    Jasa Kalibrasi
+                                    Calibration & Testing Services
                                 </a>
 
                                 <a href="{{ route('consultant') }}"
                                     class="block px-6 py-3 hover:bg-gray-50">
-                                    Jasa Consultant
+                                    Calibration Consultancy
                                 </a>
 
                                 <a href="{{ route('training') }}"
                                     class="block px-6 py-3 hover:bg-gray-50">
-                                    Training
+                                    Maintenance & Technician Support
                                 </a>
 
                             </div>
